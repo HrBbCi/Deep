@@ -67,7 +67,7 @@ def process_frames(source_path: str, temp_frame_paths: List[str], progress: Any 
         temp_frame_path = temp_frame_paths[i]
         ext = temp_frame_path.split("/")[-1]
         index = ext.split(".")[0]
-        f.write("{}_{}".format(index, temp_frame_path))
+        f.write("{}_{}\n".format(index, temp_frame_path))
         temp_frame = cv2.imread(temp_frame_path)
         try:
             result = process_frame(source_face, temp_frame)
